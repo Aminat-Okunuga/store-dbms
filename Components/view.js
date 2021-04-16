@@ -2,12 +2,41 @@ const express = require('express')
 const Router = express.Router()
 const model = require('./model')
 
+// add data
+exports.createEntry = async(req, res)=>{
+    const newData = await model.create(req.body);
+    res.status(201).json(newData);
+  };
+
+//all data
 exports.getAllEntry = async(req, res)=>{
-    const wears = await model.find();
+    const data = await model.find();
     res.status(200).json({
         developer: "AminatCanCode",
         report: true,
-        totalData: wears.length,
-        data: wears
+        totalData: data.length + 1,
+        data: data
     }) 
 }
+// find an item
+exports.getSingleEntry = async(req, res)=>{
+    const data = await data.findById(req.params.id);
+    res.status(200).json(data);
+}
+
+// update an item
+exports.updateSingleEntry = async(req, res)=>{
+    const data = await data.findByIdAndUpdate(req.params.id, req.body);
+    res.status(200).json({
+        report: "Item sucessfully updated!",
+        data: data,
+    
+    });
+}
+  
+  // delete data
+  exports.deleteSingleEntry = async(req, res)=>{
+    const newData = await myData.findByIdAndDelete(req.params.id, req.body);
+    res.status(200).json("Item Deleted Successfully!");
+  }
+    

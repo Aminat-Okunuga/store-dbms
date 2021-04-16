@@ -1,8 +1,18 @@
 const express = require("express");
-const Router = epress.Router();
+const Router = express.Router();
 
-const { getAllEntry } = require("./view");
+const {
+  getAllEntry,
+  getSingleEntry,
+  createEntry,
+  updateSingleEntry,
+  deleteSingleEntry,
+} = require("./view");
 
-Router.route("/").get(getAllEntry);
+Router.route("/").get(getAllEntry).post(createEntry);
+Router.route("/:id")
+  .get(getSingleEntry)
+  .patch(updateSingleEntry)
+  .delete(deleteSingleEntry);
 
 module.exports = Router;

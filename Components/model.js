@@ -7,7 +7,7 @@ const structure = mongoose.Schema({
     unique: [true, "Name already exists"],
   },
   code: {
-    type: Sting,
+    type: String,
     require: true,
     unique: [true, "Code already exists"],
   },
