@@ -4,8 +4,8 @@ const cors = require("cors")
 const port = 22400;
 
 // db url
-const LOCAL_DB = "mongodb://localhost/teebums";
-const ONLINE_DB = "mongodb://localhost/teebums";
+// const LOCAL_DB = "mongodb://localhost/teebums";
+const ONLINE_DB = "mongodb+srv://AminatOkunuga:AminatOkunuga@cluster0.l0t8b.mongodb.net/teebums_gallery?retryWrites=true&w=majority";
 
 // server declaration
 const app = express();
@@ -13,7 +13,7 @@ app.use(express.json());
 
 //connect to db
 mongoose
-  .connect(LOCAL_DB, {
+  .connect(ONLINE_DB, {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,
