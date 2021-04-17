@@ -11,15 +11,15 @@ const structure = mongoose.Schema({
     require: true,
     unique: [true, "Code already exists"],
   },
-  Brand: {
+  brand: {
     type: String,
     require: true,
   },
-  Category: {
+  category: {
     type: String,
     require: true,
   },
-  Quantity: {
+  quantity: {
     type: Number,
     require: true,
   },
@@ -31,6 +31,10 @@ const structure = mongoose.Schema({
     type: Number,
     require: true,
   },
+  size: {
+    type: String,
+  }
+  
 });
 
 // export file
