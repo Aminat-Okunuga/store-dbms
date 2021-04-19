@@ -12,14 +12,15 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "watch": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Aminat-Okunuga/store-dbms.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "AminatCanCode",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Aminat-Okunuga/store-dbms/issues"
