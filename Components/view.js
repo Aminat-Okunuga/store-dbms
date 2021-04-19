@@ -2,22 +2,24 @@ const express = require("express");
 const Router = express.Router();
 const model = require("./model");
 
+//all data
+exports.getAllEntry = async (req, res) => {
+    const data = await model.find();
+    res.status(200).json({
+      developer: "AminatCanCode",
+      report: true,
+      totalData: data.length + 1,
+      data: data,
+    });
+  };
+
 // add data
 exports.createEntry = async (req, res) => {
   const data = await model.create(req.body);
   res.status(201).json(data);
 };
 
-//all data
-exports.getAllEntry = async (req, res) => {
-  const data = await model.find();
-  res.status(200).json({
-    developer: "AminatCanCode",
-    report: true,
-    totalData: data.length + 1,
-    data: data,
-  });
-};
+
 // find an item
 exports.getSingleEntry = async (req, res) => {
   const data = await model.findById(req.params.id);
@@ -35,6 +37,6 @@ exports.updateSingleEntry = async (req, res) => {
 
 // delete data
 exports.deleteSingleEntry = async (req, res) => {
-  const data = await model.findByIdAndDelete(req.params.id, req.body);
+  const data = await model.findByIdAndDelete(req.params.id);
   res.status(200).json("Item successfully deleted!");
 };
