@@ -4,14 +4,13 @@ const cors = require("cors")
 const port = process.env.PORT || 22400;
 
 // db url
-// const LOCAL_DB = "mongodb://localhost/teebums";
 const ONLINE_DB = "mongodb+srv://AminatOkunuga:AminatOkunuga@cluster0.l0t8b.mongodb.net/teebums_gallery?retryWrites=true&w=majority";
 
 // server declaration
 const app = express();
 app.use(express.json());
 
-//connect to db
+//connection to db
 mongoose
   .connect(ONLINE_DB, {
     useCreateIndex: true,
