@@ -8,7 +8,7 @@ exports.getAllEntry = async (req, res) => {
     res.status(200).json({
       developer: "AminatCanCode",
       report: true,
-      totalData: data.length + 1,
+      totalData: data.length,
       data: data,
     });
   };
