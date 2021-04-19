@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors")
-const port = 22400;
+const port = process.env.PORT || 22400;
 
 // db url
 // const LOCAL_DB = "mongodb://localhost/teebums";
@@ -24,7 +24,6 @@ mongoose
 
 
   app.use(cors());
-  app.use(express.json());
   app.use("/", require("./Components/controller"));
 
 
